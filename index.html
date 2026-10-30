@@ -1,0 +1,485 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Chandler Bush Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Design strategy and UX research portfolio of Chandler Bush: journey maps, ecosystem maps, roadmaps, and decks for health systems and Adobe.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a calm, paper-coloured frame around colourful work; numbered sections mirror the journey map's phase rail. */
+:root{
+  --paper:#F1F3EE; --panel:#E8EBE5; --panel-2:#DEE3DC; --ink:#121816; --ink-2:#434F49; --muted:#73807A;
+  --line:#CBD2CA; --line-2:#B6C0B6; --accent:#0F5E4A; --accent-ink:#F1F3EE; --accent-soft:#D5E8DE; --focus:#1C7F66;
+  --frame:#FFFFFF;
+  --display:'Bricolage Grotesque','Bricolage Grotesque Variable','Helvetica Neue',Arial,sans-serif;
+  --body:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --radius:6px;
+  --shadow:0 1px 2px rgba(18,24,22,.06),0 10px 28px -14px rgba(18,24,22,.28);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0F1412; --panel:#161C19; --panel-2:#1E2622; --ink:#E9EDE9; --ink-2:#B7C0B9; --muted:#7F8B84;
+  --line:#29332D; --line-2:#394540; --accent:#72D4B0; --accent-ink:#0F1412; --accent-soft:#163A2E; --focus:#93E3C6;
+  --frame:#0B100E; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -14px rgba(0,0,0,.7); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F1412; --panel:#161C19; --panel-2:#1E2622; --ink:#E9EDE9; --ink-2:#B7C0B9; --muted:#7F8B84;
+  --line:#29332D; --line-2:#394540; --accent:#72D4B0; --accent-ink:#0F1412; --accent-soft:#163A2E; --focus:#93E3C6;
+  --frame:#0B100E; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -14px rgba(0,0,0,.7); color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-underline-offset:.16em;text-decoration-thickness:1px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--accent-ink);padding:8px 12px;z-index:100}
+.skip:focus{left:12px}
+.wrap{max-width:1280px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+
+/* ---- type */
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-.015em;margin:0;text-wrap:balance}
+h1{font-size:clamp(42px,7.2vw,98px);line-height:.98;letter-spacing:-.025em;font-variation-settings:'opsz' 96}
+h1.h1--long{font-size:clamp(32px,4.6vw,64px);line-height:1.04;letter-spacing:-.022em;max-width:18ch}
+h2{font-size:clamp(30px,4vw,54px);line-height:1.04;letter-spacing:-.02em}
+h3{font-size:clamp(21px,2vw,26px);line-height:1.2}
+h4{font-size:18px;line-height:1.3}
+p{margin:0}
+.eyebrow{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.eyebrow .num{color:var(--accent);font-weight:500}
+.eyebrow .num::after{content:"";display:inline-block;width:28px;height:1px;background:var(--line-2);vertical-align:middle;margin-left:12px}
+.dek{font-size:clamp(18px,1.6vw,22px);line-height:1.45;color:var(--ink-2);max-width:60ch;text-wrap:pretty}
+.dek a{color:var(--accent);font-weight:600;text-decoration-color:color-mix(in srgb,var(--accent) 50%,transparent)}
+.prose{max-width:64ch}
+.prose h3{margin-top:28px;margin-bottom:8px}
+.prose h3:first-child{margin-top:0}
+.prose p{text-wrap:pretty}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 14px/1 var(--body);padding:12px 16px;border:1px solid var(--ink);border-radius:999px;text-decoration:none;color:var(--ink);background:transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn--solid{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn--solid:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* ---- top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top__row{display:flex;align-items:center;gap:20px;min-height:56px}
+.top__name{font:600 15px/1 var(--display);text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.top__nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;margin-inline:4px}
+.top__nav::-webkit-scrollbar{display:none}
+.top__nav a{font:500 13px/1 var(--body);text-decoration:none;padding:9px 10px;border-radius:999px;white-space:nowrap;color:var(--ink-2)}
+.top__nav a:hover,.top__nav a.is-active{background:var(--panel);color:var(--ink)}
+.top__nav a .n{font-family:var(--mono);font-size:11px;color:var(--accent);margin-right:6px}
+.top__cta{display:flex;gap:8px;flex:none}
+.top__cta .btn{padding:9px 13px;font-size:13px}
+@media (max-width:719px){.top__cta .btn span{display:none}.top__cta .btn{padding:9px 11px}}
+
+/* ---- hero */
+.hero{padding-block:clamp(56px,9vw,120px) clamp(40px,6vw,72px)}
+.hero .eyebrow{margin-bottom:28px}
+.hero h1{max-width:12ch}
+.hero__grid{display:grid;grid-template-columns:1fr;gap:36px;margin-top:36px}
+@media (min-width:900px){.hero__grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:end}}
+.stats{display:grid;gap:0;border-top:1px solid var(--line)}
+.stat{display:grid;grid-template-columns:calc(clamp(30px,3vw,40px) * 4.75) minmax(0,1fr);gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);min-width:0}
+@media (max-width:420px){.stat{grid-template-columns:minmax(0,1fr);gap:6px}}
+.stat b{font:600 clamp(30px,3vw,40px)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.stat span{display:block;font-size:14.5px;line-height:1.4;color:var(--ink-2);text-wrap:pretty}
+.stat__link{display:inline-flex;align-items:center;gap:5px;margin-left:0;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}
+.stat__link:hover{text-decoration:underline}
+.stat__link svg{width:13px;height:13px;transition:transform .15s}
+.stat__link:hover svg{transform:translateX(2px)}
+
+/* ---- contents */
+.toc{padding-block:8px 72px}
+.toc__title{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.toc ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.toc li{border-bottom:1px solid var(--line)}
+.toc a{display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;align-items:baseline;padding:16px 0;text-decoration:none;color:inherit}
+@media (min-width:720px){.toc a{grid-template-columns:56px minmax(0,2fr) minmax(0,3fr);gap:16px 28px}}
+.toc .n{font:500 13px/1.6 var(--mono);color:var(--accent)}
+.toc .t{font:600 clamp(18px,1.6vw,22px)/1.3 var(--display);letter-spacing:-.01em;transition:transform .2s}
+.toc .d{font-size:15px;line-height:1.45;color:var(--ink-2);grid-column:2}
+@media (min-width:720px){.toc .d{grid-column:auto}}
+.toc a:hover .t{transform:translateX(4px);color:var(--accent)}
+
+/* ---- case study */
+.case{border-top:1px solid var(--line);padding-block:clamp(56px,7vw,104px)}
+.case__head{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;max-width:900px}
+.case__head h2{margin-top:6px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px 28px;margin:34px 0 0;padding:22px 0 0;border-top:1px solid var(--line);max-width:1100px}
+.facts div{min-width:0}
+.facts dt{font:500 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.facts dd{margin:0;font-size:15px;line-height:1.45;color:var(--ink)}
+.case__body{display:grid;gap:40px;margin-top:48px}
+.case__body--single{grid-template-columns:minmax(0,1fr)}
+.prose--cols{max-width:72ch;display:grid;gap:28px}
+.prose--cols .prose__blk h3{margin:0 0 8px}
+@media (min-width:980px){.prose--cols{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;max-width:none}}
+.strip{margin-top:48px}
+.strip .aside__title{margin-bottom:14px}
+.slides--row{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.slides.slides--row .shot:first-child{grid-column:auto}
+@media (min-width:980px){.slides--row{grid-template-columns:repeat(5,minmax(0,1fr))}.slides--row.n7,.slides--row.n3,.slides--row.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:980px){.case__body:not(.case__body--single){grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:start}}
+.numbers{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.numbers div{background:var(--panel);padding:18px 16px;min-width:0}
+.numbers b{display:block;font:600 36px/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.numbers span{display:block;margin-top:8px;font-size:13.5px;line-height:1.4;color:var(--ink-2);text-wrap:pretty}
+.features{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.features li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.45;color:var(--ink-2)}
+.features li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1.5px;background:var(--accent)}
+.aside__title{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.aside__title+.numbers{margin-bottom:28px}
+
+/* ---- figures */
+.gallery{display:grid;grid-template-columns:1fr;gap:28px;margin-top:56px}
+@media (min-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 28px}.gallery .shot--wide{grid-column:1/-1}}
+.shot{margin:0;min-width:0}
+.shot .frame{background:var(--frame);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:zoom-in;transition:transform .2s,box-shadow .2s}
+.shot .frame:hover{transform:translateY(-2px)}
+.shot img{width:100%}
+.shot figcaption{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;margin-top:12px;font-size:14px;line-height:1.45;color:var(--ink-2)}
+.shot figcaption .fn{font:500 11px/1.9 var(--mono);color:var(--accent);letter-spacing:.06em}
+.shot--tall .frame{max-height:560px;overflow:hidden;position:relative}
+.shot--tall .frame::after{content:"";position:absolute;inset:auto 0 0;height:80px;background:linear-gradient(to bottom,transparent,var(--paper))}
+
+/* ---- live embed */
+.embed{margin-top:56px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);overflow:hidden}
+.embed__bar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.embed__bar .label{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);flex:1;min-width:0}
+.embed__stage{position:relative;background:var(--frame)}
+.embed__stage img{width:100%}
+.embed__stage iframe{display:block;width:100%;height:min(78vh,900px);border:0;background:#FBFAF6}
+.embed__stage .load{position:absolute;inset:auto 0 0;display:flex;justify-content:center;align-items:flex-end;padding:72px 24px 28px;background:linear-gradient(to bottom,rgba(241,243,238,0),var(--paper) 78%)}
+.embed__stage .load .btn{background:var(--ink);border-color:var(--ink);color:var(--paper);box-shadow:var(--shadow)}
+.embed__stage .load .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.embed__stage .shotimg{max-height:560px;object-fit:cover;object-position:top}
+.embed__note{padding:12px 16px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line)}
+.embed.is-full{position:fixed;inset:0;z-index:70;border:0;border-radius:0;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+.embed.is-full .embed__stage{flex:1;min-height:0}
+.embed.is-full .embed__stage iframe{height:100%}
+.embed.is-full .embed__note{display:none}
+
+/* ---- groups (decks, maps, boards) */
+.group{border-top:1px solid var(--line);padding-block:clamp(56px,7vw,104px)}
+.group__head{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;max-width:900px;margin-bottom:56px}
+.group__head h2{margin-top:6px}
+.entry{display:grid;gap:28px;padding-block:44px;border-top:1px solid var(--line)}
+.entry:first-of-type{border-top:0;padding-top:0}
+@media (min-width:980px){.entry{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;align-items:start}}
+.entry__text h3{margin-bottom:8px}
+.entry__meta{font:500 12px/1.5 var(--mono);letter-spacing:.06em;color:var(--muted);margin-bottom:14px;text-transform:uppercase}
+.entry__role{font-size:14px;line-height:1.45;color:var(--ink-2);padding:10px 12px;border-left:2px solid var(--accent);background:var(--panel);margin:14px 0 16px;border-radius:0 var(--radius) var(--radius) 0}
+.entry__text p.body{font-size:16px;line-height:1.55;text-wrap:pretty}
+.slides{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px 16px}
+.slides .shot:first-child{grid-column:span 2}
+@media (max-width:460px){.slides{grid-template-columns:1fr 1fr}.slides .shot:first-child{grid-column:1/-1}}
+.slides .shot figcaption{margin-top:8px;font-size:12.5px;gap:8px}
+.slides .shot figcaption .fn{font-size:10.5px;line-height:1.7}
+.entry .gallery{margin-top:0}
+.entry .gallery{grid-template-columns:1fr}
+@media (min-width:760px){.entry .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---- about */
+.about{border-top:1px solid var(--line);padding-block:clamp(56px,7vw,104px)}
+.about__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;margin-top:40px}
+.about__grid>*{min-width:0}
+@media (min-width:980px){.about__grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:start}}
+.how{display:grid;gap:18px;margin-top:36px}
+@media (min-width:720px){.how{grid-template-columns:repeat(3,1fr)}}
+.how div{padding:18px 0 0;border-top:2px solid var(--ink)}
+.how h4{margin-bottom:8px}
+.how p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+.skills{display:grid;gap:24px;margin-top:40px}
+@media (min-width:720px){.skills{grid-template-columns:repeat(2,1fr)}}
+.skills h4{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.skills ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.skills li{font-size:15px;line-height:1.45;padding-left:16px;position:relative}
+.skills li::before{content:"";position:absolute;left:0;top:.68em;width:7px;height:1.5px;background:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font:500 13px/1 var(--body);padding:8px 12px;border:1px solid var(--line-2);border-radius:999px;color:var(--ink-2)}
+.contact{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:24px}
+.contact h3{margin-bottom:6px}
+.contact p{color:var(--ink-2);font-size:15px}
+.contact dl{margin:20px 0 0;display:grid;gap:14px}
+.contact dt{font:500 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.contact dd{margin:4px 0 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:16px}
+.contact dd .val{font-family:var(--mono);font-size:14.5px;user-select:all}
+.copy{font:500 12px/1 var(--body);padding:6px 10px;border:1px solid var(--line-2);border-radius:999px;background:transparent;color:var(--ink-2);cursor:pointer}
+.copy:hover{border-color:var(--ink);color:var(--ink)}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px;color:var(--ink-2)}
+.about .sub{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:32px 0 10px}
+
+/* ---- footer */
+.foot{border-top:1px solid var(--line);padding-block:32px 48px;font-size:13.5px;color:var(--muted);display:grid;gap:12px}
+.foot .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---- lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(10,14,12,.97);display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:calc(12px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));color:#E9EDE9}
+.lb[hidden]{display:none}
+.lb__bar{display:flex;align-items:center;gap:12px;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.lb__bar .count{flex:1}
+.lb__stage{overflow:auto;display:grid;place-items:center;padding:12px 0;overscroll-behavior:contain}
+.lb__stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6);background:#fff}
+.lb__zoom{display:inline-flex;align-items:center;gap:6px}
+.lb__zoom .zl{min-width:3.2em;text-align:center;font-variant-numeric:tabular-nums}
+.lb__hint{color:#8E9A93;text-transform:none;letter-spacing:0;font:400 12px/1.4 var(--body)}
+@media (max-width:719px){.lb__hint{display:none}}
+.lb__cap{text-align:center;font-size:14px;line-height:1.45;color:#B7C0B9;max-width:80ch;margin-inline:auto}
+.lb button{font:500 13px/1 var(--body);padding:9px 13px;border:1px solid rgba(233,237,233,.35);border-radius:999px;background:transparent;color:#E9EDE9;cursor:pointer}
+.lb button:hover{background:#E9EDE9;color:#0F1412}
+.lb.is-zoomed .lb__stage{display:block}
+.lb.is-zoomed .lb__stage img{max-width:none;max-height:none;height:auto;margin:0 auto;cursor:zoom-in}
+.lb.is-max .lb__stage img{cursor:zoom-out}
+.lb__stage img{cursor:zoom-in}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,8px);background:var(--ink);color:var(--paper);font:500 13px/1 var(--body);padding:10px 14px;border-radius:999px;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:95}
+.toast.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap top__row">
+  <a class="top__name" href="#top">Chandler Bush</a>
+  <nav class="top__nav" aria-label="Sections"><a href="#journey-map" data-nav="journey-map"><span class="n">01</span>Care process map</a><a href="#design-debt" data-nav="design-debt"><span class="n">02</span>Design debt</a><a href="#cc-commerce" data-nav="cc-commerce"><span class="n">03</span>CC + Commerce</a><a href="#genai" data-nav="genai"><span class="n">04</span>GenAI lead</a><a href="#design-value" data-nav="design-value"><span class="n">05</span>Design to business value</a><a href="#express-beta" data-nav="express-beta"><span class="n">06</span>Express beta</a><a href="#more-work" data-nav="more-work"><span class="n">07</span>More work</a><a href="#about" data-nav="about"><span class="n">08</span>About</a></nav>
+  <div class="top__cta"><a class="btn" href="#contact"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1"/><path d="m2 4.5 6 4.5 6-4.5"/></svg><span>Get in touch</span></a></div>
+</div></header>
+<main id="main">
+<section class="hero wrap" id="top">
+  <p class="eyebrow"><span>Design strategy · UX research · Experience design</span></p>
+  <h1 class="h1--long">A brief overview of projects I drove from start to finish and artifacts I built.</h1>
+  <div class="hero__grid">
+    <p class="dek">Hi! Thanks for checking my portfolio out. If you’re short on time I’d recommend digging into examples <a href="#journey-map">one</a> and <a href="#cc-commerce">three</a> as good examples of my tool-building capabilities and business rigor I bring into my projects.</p>
+    <div class="stats"><div class="stat"><b>12 → 3</b><span>The number of weeks I reduced our core consulting engagements to after rebuilding our practice around AI. <a class="stat__link" href="#journey-map">See project example 1<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></span></div><div class="stat"><b>480 → 30</b><span>The number of minutes the asset-to-storefront workflow was reduced to after I built the CC Libraries to Adobe Commerce merchandising integration. <a class="stat__link" href="#cc-commerce">See project example 3<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></span></div><div class="stat"><b>24</b><span>The number of executive teams I aligned under a shared generative AI vision, the groundwork for Adobe Firefly. <a class="stat__link" href="#genai">See project example 4<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></span></div></div>
+  </div>
+</section>
+<nav class="toc wrap" aria-label="What's inside">
+  <p class="toc__title">What’s inside</p>
+  <ol><li><a href="#journey-map"><span class="n">01</span><span class="t">Interactive care process map for retired NFL players</span><span class="d">A national health system asked me to work out how a concierge care program for retired NFL players should run. I interviewed all project leads across 18 departments and turned a highly sophisticated outcome into an easy-to-navigate interactive process map.</span></a></li><li><a href="#design-debt"><span class="n">02</span><span class="t">The Design Debt Initiative</span><span class="d">An ecosystem map and one-year plan that turned perpetually backlogged UX fixes into a funded annual event at Adobe.</span></a></li><li><a href="#cc-commerce"><span class="n">03</span><span class="t">Creative Cloud + Adobe Commerce Integration Build</span><span class="d">The business case, the opportunity landscape, and the integration I ended up leading as PM that dramatically reduced workflow ToT.</span></a></li><li><a href="#genai"><span class="n">04</span><span class="t">Generative AI Initiative Project Lead</span><span class="d">How I got 24 teams at Adobe to agree on what generative AI should be, back before there was a plan.</span></a></li><li><a href="#design-value"><span class="n">05</span><span class="t">Articulating the bridge between design efforts and business value</span><span class="d">A metrics map that ties what designers can change to the numbers the business tracks, so a design team can show the value it adds.</span></a></li><li><a href="#express-beta"><span class="n">06</span><span class="t">Adobe Express beta research program</span><span class="d">The framework I built for grading whether a beta workflow is ready to ship, with the deck and roadmap I used to successfully gain buy-in from leadership.</span></a></li><li><a href="#more-work"><span class="n">07</span><span class="t">Other decks and boards</span><span class="d">Shorter cuts of three more projects: a root-cause deep dive on billing support tickets, an audience framework for Experience Cloud, and a competitive analysis workshop I ran to help the Adobe Analytics design team know how to compete with rising SMB analytics platforms.</span></a></li><li><a href="#about"><span class="n">08</span><span class="t">About me</span><span class="d">How I work, the skills list, and how to reach me.</span></a></li></ol>
+</nav><section class="case wrap" id="journey-map" aria-labelledby="journey-map-title">
+  <header class="case__head">
+    <p class="eyebrow"><span class="num">01</span><span>Project example 1 · Cast &amp; Hue · 2026</span></p>
+    <h2 id="journey-map-title">Interactive care process map for retired NFL players</h2>
+    <p class="dek">A national U.S. health system wanted to launch a concierge care program for retired NFL players: multi-day visits that pull in sports medicine, cardiology, imaging, neurology, primary care, scheduling, billing, and an outside agency that manages the players’ care. The whole journey had never been written down in one place, so I wrote it down, and then built it as something the team can click through.</p>
+    <dl class="facts"><div><dt>Client</dt><dd>A national U.S. health system (name withheld) and its athlete-care partner agency</dd></div><div><dt>My role</dt><dd>Led the research and synthesis; designed and built the map</dd></div><div><dt>When</dt><dd>Fall 2026 · v1 delivered October 21</dd></div><div><dt>Methods</dt><dd>Stakeholder interviews, qualitative coding, process mapping, RACI, and risk and capability analysis</dd></div><div><dt>Output</dt><dd>Interactive HTML map with search, filters, a step detail panel, keyboard shortcuts, deep links, and a presentation mode</dd></div></dl>
+  </header>
+  <div class="case__body">
+    <div class="prose"><h3>The problem</h3><p>Sports medicine knew the exam and scheduling had the calendar, the agency knew the players, and nobody had written down the handoffs between them. Leadership needed that worked out before they could staff the program or price it.</p><h3>What I did</h3><p>I interviewed the project leads across 18 departments, coded every interview, and built the journey step by step from what people told me. Every step records who’s involved, whether it exists yet, what could go wrong, and how many interviews raised it.</p><h3>What came out</h3><p>Version 1 went to the client in October 2026 as the working draft for program design. The map is live below, so click around.</p></div>
+    <aside>
+      <p class="aside__title">By the numbers</p>
+      <div class="numbers"><div><b>7</b><span>phases, from program discovery to ongoing care</span></div><div><b>147</b><span>steps in 33 process categories</span></div><div><b>18</b><span>departments in a per-phase RACI</span></div><div><b>90</b><span>steps with a flagged risk and the interview context for it</span></div><div><b>70</b><span>aspirational steps, marked apart from the 77 that exist today</span></div><div><b>6</b><span>steps that need a new role</span></div></div>
+      <p class="aside__title">What the tool does</p>
+      <ul class="features"><li>Phase view with a summary, the client’s goals with supporting quotes, process cards, a RACI, and a stats strip for the phase</li><li>Step panel: capability, type, risk, departments, role status, and an evidence count</li><li>Click a department anywhere, including inside a step, to light up every step it touches across the journey</li><li>Search over steps and notes; 17 best practices borrowed from the partner agency, tagged to the steps they improve</li><li>Keyboard shortcuts (1 to 7 for phases, arrows to walk steps, ? for the list), previous and next phase links, and a copyable link to every phase, card, and step</li><li>Presentation mode that strips the controls and walks a phase card by card; swipe works on a tablet</li></ul>
+    </aside>
+  </div>
+  <div class="embed" id="live-map">
+    <div class="embed__bar"><span class="label">Live map · interactive · anonymized</span><button class="btn" type="button" id="map-expand" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7V3h4M13 9v4H9M3 3l4.5 4.5M13 13 8.5 8.5"/></svg><span>Full screen</span></button><a class="btn btn--solid" href="journey-map.html" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9"/></svg>Open the map on its own page</a></div>
+    <div class="embed__stage" id="map-stage"><img class="shotimg" src="img/jm-overview.jpg" width="2400" height="1500" alt="Screenshot of the journey map opening view"><div class="load"><button class="btn" type="button" id="map-load"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 3.5v9l7-4.5z"/></svg>Load the interactive map here</button></div></div>
+    <p class="embed__note">Use the phase menu to open a phase, the highlight controls to light up a department or risk, and Present for the meeting view. Press ? inside the map for keyboard shortcuts.</p>
+  </div>
+  <div class="gallery"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: The journey map opening view: masthead, filters, stats, and the seven-phase index"><img loading="lazy" decoding="async" src="img/jm-overview.jpg" width="4800" height="3000" alt="The journey map opening view: masthead, filters, stats, and the seven-phase index" data-cap="The full journey on open: filters for capability, risk, and department, the journey at a glance, and the phase index." data-vector=""></div><figcaption><span class="fn">01</span><span>The full journey on open: filters for capability, risk, and department, the journey at a glance, and the phase index.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Phase 2, Intake: summary, stats strip, goals, and process cards"><img loading="lazy" decoding="async" src="img/jm-phase2.jpg" width="4800" height="3000" alt="Phase 2, Intake: summary, stats strip, goals, and process cards" data-cap="One phase (Intake). The summary, how much of it exists today, the client’s goals with supporting quotes, and the process cards." data-vector=""></div><figcaption><span class="fn">02</span><span>One phase (Intake). The summary, how much of it exists today, the client’s goals with supporting quotes, and the process cards.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: A step detail panel showing capability, risk, departments, and evidence"><img loading="lazy" decoding="async" src="img/jm-step-panel.jpg" width="4800" height="3000" alt="A step detail panel showing capability, risk, departments, and evidence" data-cap="One step opened up. Capability, type, the risk people described in interviews, the departments involved, whether the role exists, and the number of interviews it came up in." data-vector=""></div><figcaption><span class="fn">03</span><span>One step opened up. Capability, type, the risk people described in interviews, the departments involved, whether the role exists, and the number of interviews it came up in.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: The departments and roles matrix across seven phases"><img loading="lazy" decoding="async" src="img/jm-raci.jpg" width="4800" height="3540" alt="The departments and roles matrix across seven phases" data-cap="Departments and roles. 18 departments across 7 phases; click one and every step it touches lights up." data-vector=""></div><figcaption><span class="fn">04</span><span>Departments and roles. 18 departments across 7 phases; click one and every step it touches lights up.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Presentation mode showing an Athlete Arrival card"><img loading="lazy" decoding="async" src="img/jm-present-3.jpg" width="4800" height="3000" alt="Presentation mode showing an Athlete Arrival card" data-cap="Presentation mode. This is the view the program team uses when they walk a phase together in a meeting." data-vector=""></div><figcaption><span class="fn">05</span><span>Presentation mode. This is the view the program team uses when they walk a phase together in a meeting.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: A full phase page, from summary to RACI"><img loading="lazy" decoding="async" src="img/jm-phase6-full.jpg" width="4800" height="5586" alt="A full phase page, from summary to RACI" data-cap="A full phase page (Treatment), top to bottom, ending with links to the phases on either side." data-vector=""></div><figcaption><span class="fn">06</span><span>A full phase page (Treatment), top to bottom, ending with links to the phases on either side.</span></figcaption></figure></div>
+</section><section class="case wrap" id="design-debt" aria-labelledby="design-debt-title">
+  <header class="case__head">
+    <p class="eyebrow"><span class="num">02</span><span>Project example 2 · Adobe Design · 2023</span></p>
+    <h2 id="design-debt-title">The Design Debt Initiative</h2>
+    <p class="dek">An ecosystem map and a one-year plan for turning a parking lot of perpetually backlogged UX fixes into a funded, annual Debt Week across Adobe’s Digital Media design teams.</p>
+    <dl class="facts"><div><dt>Organization</dt><dd>Adobe Design, Digital Media</dd></div><div><dt>My role</dt><dd>Design strategist; designed the initiative and its operating model</dd></div><div><dt>When</dt><dd>2023</dd></div><div><dt>Methods</dt><dd>Stakeholder interviews, debt audit survey, process design, DACI</dd></div><div><dt>Output</dt><dd>Ecosystem one-pager, 2023 approach, and a playbook and tracking model</dd></div></dl>
+  </header>
+  <div class="gallery" style="margin-top:48px"><figure class="shot shot--wide"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: The Design Debt Initiative ecosystem: five stages from definition alignment to Debt Week"><img loading="lazy" decoding="async" src="img/debt-ecosystem.svg" width="1224" height="528" alt="The Design Debt Initiative ecosystem: five stages from definition alignment to Debt Week" data-cap="How it fits together: five stages, from definition alignment to Debt Week execution, with the owners and artifacts at each stage." data-vector="1"></div><figcaption><span class="fn">07</span><span>How it fits together: five stages, from definition alignment to Debt Week execution, with the owners and artifacts at each stage.</span></figcaption></figure></div>
+  <div class="case__body">
+    <div class="prose"><h3>The problem</h3><p>Every design team had a list of small fixes that everyone agreed were worth doing and nobody had time for. There was no shared definition of design debt either, so nobody could see how much each team was carrying.</p><h3>What I did</h3><p>Debt Week was the easy part. Most of the work went into the ecosystem around it: a shared definition of debt, tracking that lives in the playbook teams already used, an audit feeding one central list, and leadership owning selection and resourcing.</p><h3>Why I like this one</h3><p>Each piece has an owner and debt gets measured. It’s set up to run again next year.</p></div>
+    <div class="gallery" style="margin-top:0;grid-template-columns:1fr"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Design Debt: approach for 2023, with four phases from April to November"><img loading="lazy" decoding="async" src="img/debt-approach.svg" width="1236" height="1134" alt="Design Debt: approach for 2023, with four phases from April to November" data-cap="The 2023 approach. Why design debt, what a good year would look like, and four phases and the question each has to settle." data-vector="1"></div><figcaption><span class="fn">08</span><span>The 2023 approach. Why design debt, what a good year would look like, and four phases and the question each has to settle.</span></figcaption></figure></div>
+  </div>
+  <div class="gallery" style="margin-top:32px"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Detail: setting the stage, formalizing an approach, and understanding the debt"><img loading="lazy" decoding="async" src="img/debt-ecosystem-left.svg" width="741" height="438" alt="Detail: setting the stage, formalizing an approach, and understanding the debt" data-cap="The left half: the definition deck, the playbook and tracking model, and the debt audit feeding one central list." data-vector="1"></div><figcaption><span class="fn">09</span><span>The left half: the definition deck, the playbook and tracking model, and the debt audit feeding one central list.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Detail: Debt Week prep and execution"><img loading="lazy" decoding="async" src="img/debt-ecosystem-right.svg" width="496" height="438" alt="Detail: Debt Week prep and execution" data-cap="The right half: what leadership has to do before Debt Week, and then the week itself." data-vector="1"></div><figcaption><span class="fn">10</span><span>The right half: what leadership has to do before Debt Week, and then the week itself.</span></figcaption></figure></div>
+</section><section class="case wrap" id="cc-commerce" aria-labelledby="cc-commerce-title">
+  <header class="case__head">
+    <p class="eyebrow"><span class="num">03</span><span>Project example 3 · Adobe Creative Cloud + Adobe Commerce · 2020 to 2022</span></p>
+    <h2 id="cc-commerce-title">Creative Cloud + Adobe Commerce Integration Build</h2>
+    <p class="dek">Adobe owned the tools merchants use to make product images and the platform they sell on, and the two didn’t talk to each other. I ran the work sessions that mapped the opportunity and wrote the business case, and when the first build kept slipping I stepped into the lead PM role and shipped it. The asset-to-storefront workflow went from about eight hours to thirty minutes.</p>
+    <dl class="facts"><div><dt>Organization</dt><dd>Adobe, Creative Cloud and Adobe Commerce (Magento)</dd></div><div><dt>My role</dt><dd>Design strategist on the opportunity work; lead PM on the CC Libraries integration</dd></div><div><dt>When</dt><dd>2020 to 2022</dd></div><div><dt>Methods</dt><dd>Customer research, opportunity mapping, desirability-feasibility-viability scoring, phased roadmap, business case</dd></div><div><dt>Output</dt><dd>Business case deck, opportunity landscape board, phased integration plan, shipped integration</dd></div></dl>
+  </header>
+  <div class="case__body case__body--single">
+    <div class="prose prose--cols"><div class="prose__blk"><h3>The problem</h3><p>Merchants with big, fast-changing catalogs were paying for photo shoots and slow editing to keep product images consistent, then re-uploading all of it into Commerce by hand. Two-thirds of them already had Creative Cloud, and the two products had never been hooked together.</p></div><div class="prose__blk"><h3>What I did</h3><p>I ran work sessions with product, research, design, and engineering from both sides, mapped every opportunity on one board, and scored each one on desirability, feasibility, and viability. The business case made CC Libraries and Aspen (Photoshop’s imaging services) the first integrations to build.</p></div><div class="prose__blk"><h3>What came out</h3><p>Leadership approved the phased plan, and when the first build kept slipping I took the lead PM role and shipped it. Publishing an approved asset to a storefront went from roughly eight hours to about thirty minutes.</p></div></div>
+  </div>
+  
+  <div class="strip">
+    <p class="aside__title">From the business case deck</p>
+    <div class="slides slides--row n5"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The business case"><img loading="lazy" decoding="async" src="img/magento-05.svg" alt="Slide: The business case" data-cap="The business case" data-vector="1"></div><figcaption><span class="fn">01</span><span>The business case</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Summary: bridge creative authoring and merchandising"><img loading="lazy" decoding="async" src="img/magento-07.svg" alt="Slide: Summary: bridge creative authoring and merchandising" data-cap="Summary: bridge creative authoring and merchandising" data-vector="1"></div><figcaption><span class="fn">02</span><span>Summary: bridge creative authoring and merchandising</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The opportunity: 67% of Commerce customers already pay for CC"><img loading="lazy" decoding="async" src="img/magento-10.svg" alt="Slide: The opportunity: 67% of Commerce customers already pay for CC" data-cap="The opportunity: 67% of Commerce customers already pay for CC" data-vector="1"></div><figcaption><span class="fn">03</span><span>The opportunity: 67% of Commerce customers already pay for CC</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Scoring each integration on desirability, feasibility, and viability"><img loading="lazy" decoding="async" src="img/magento-22.svg" alt="Slide: Scoring each integration on desirability, feasibility, and viability" data-cap="Scoring each integration on desirability, feasibility, and viability" data-vector="1"></div><figcaption><span class="fn">04</span><span>Scoring each integration on desirability, feasibility, and viability</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The phased plan leadership approved"><img loading="lazy" decoding="async" src="img/magento-23.svg" alt="Slide: The phased plan leadership approved" data-cap="The phased plan leadership approved" data-vector="1"></div><figcaption><span class="fn">05</span><span>The phased plan leadership approved</span></figcaption></figure></div>
+  </div>
+  <p class="aside__title" style="margin-top:48px">The boards behind it</p>
+  <div class="gallery" style="margin-top:12px"><figure class="shot shot--wide"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: The Creative Cloud + Commerce opportunity landscape board"><img loading="lazy" decoding="async" src="img/cc-landscape.jpg" width="5000" height="3020" alt="The Creative Cloud + Commerce opportunity landscape board" data-cap="The opportunity landscape: seven workstream frames connected to the merchant workflows they improve. This is the board the business case came out of." data-vector=""></div><figcaption><span class="fn">11</span><span>The opportunity landscape: seven workstream frames connected to the merchant workflows they improve. This is the board the business case came out of.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Zoom in: the Product Image Processing and Correction frame"><img loading="lazy" decoding="async" src="img/product-image.svg" width="779" height="826" alt="Zoom in: the Product Image Processing and Correction frame" data-cap="Zoom in on one frame: Product Image Processing and Correction. The customer need, the hero idea, the capabilities to reuse, the players, market signals, and the sticky-note round where the team pushed on it." data-vector="1"></div><figcaption><span class="fn">12</span><span>Zoom in on one frame: Product Image Processing and Correction. The customer need, the hero idea, the capabilities to reuse, the players, market signals, and the sticky-note round where the team pushed on it.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Detail of the hero idea: batch process, collaborate and review, quick touch-ups"><img loading="lazy" decoding="async" src="img/product-image-hero.svg" width="561" height="322" alt="Detail of the hero idea: batch process, collaborate and review, quick touch-ups" data-cap="The hero idea as a three-step workflow: batch processing in Photoshop’s imaging services, review on a shared web canvas, quick touch-ups in Express." data-vector="1"></div><figcaption><span class="fn">13</span><span>The hero idea as a three-step workflow: batch processing in Photoshop’s imaging services, review on a shared web canvas, quick touch-ups in Express.</span></figcaption></figure></div>
+</section><section class="case wrap" id="genai" aria-labelledby="genai-title">
+  <header class="case__head">
+    <p class="eyebrow"><span class="num">04</span><span>Project example 4 · Adobe · 2022</span></p>
+    <h2 id="genai-title">Generative AI Initiative Project Lead</h2>
+    <p class="dek">When this started, Adobe didn’t have a generative AI strategy. It had 24 working teams and a lot of opinions. I interviewed the people holding them, opened the first leadership summit on the topic with what they’d told us, and kept a map of every workstream current. This is the alignment work that came before Firefly.</p>
+    <dl class="facts"><div><dt>Organization</dt><dd>Adobe, Digital Media design and the AI/ML org</dd></div><div><dt>My role</dt><dd>Design strategist; led the stakeholder research and the workstream ecosystem; worked daily with the SVP of AI/ML</dd></div><div><dt>When</dt><dd>2022</dd></div><div><dt>Methods</dt><dd>Executive interviews, thematic synthesis, ecosystem mapping, strategic framing</dd></div><div><dt>Output</dt><dd>Leadership summit deck, Generative Creativity workstream ecosystem, the decisions list leadership worked from</dd></div></dl>
+  </header>
+  <div class="case__body case__body--single">
+    <div class="prose prose--cols"><div class="prose__blk"><h3>The problem</h3><p>Twenty-one VPs and directors each had their own version of what generative AI should mean for Adobe, and teams were duplicating work without knowing it. The pieces no single team would own weren’t getting funded.</p></div><div class="prose__blk"><h3>What I did</h3><p>My design-strategy partner and I interviewed each of them with the same three questions, then opened the summit with what they’d told us: what could get in the way, the needs no single team would fund, and the decisions leadership had to make first. I also built and kept up the workstream ecosystem, the one place every AI/ML initiative could see what the others were doing.</p></div><div class="prose__blk"><h3>What came out</h3><p>Leadership worked from the decisions list, and the 24 working teams got behind one vision and folded it into their own roadmaps. Firefly was built on that.</p></div></div>
+  </div>
+  
+  <div class="strip">
+    <p class="aside__title">From the leadership summit deck</p>
+    <div class="slides slides--row n7"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Cover"><img loading="lazy" decoding="async" src="img/summit-01.svg" alt="Slide: Cover" data-cap="Cover" data-vector="1"></div><figcaption><span class="fn">01</span><span>Cover</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Where Creative Cloud sat on the AI curve"><img loading="lazy" decoding="async" src="img/summit-03.svg" alt="Slide: Where Creative Cloud sat on the AI curve" data-cap="Where Creative Cloud sat on the AI curve" data-vector="1"></div><figcaption><span class="fn">02</span><span>Where Creative Cloud sat on the AI curve</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Five things that could get in the way"><img loading="lazy" decoding="async" src="img/summit-10.svg" alt="Slide: Five things that could get in the way" data-cap="Five things that could get in the way" data-vector="1"></div><figcaption><span class="fn">03</span><span>Five things that could get in the way</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The innovator’s dilemma and longer-term culture"><img loading="lazy" decoding="async" src="img/summit-14.svg" alt="Slide: The innovator’s dilemma and longer-term culture" data-cap="The innovator’s dilemma and longer-term culture" data-vector="1"></div><figcaption><span class="fn">04</span><span>The innovator’s dilemma and longer-term culture</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Category-agnostic needs no single team would fund"><img loading="lazy" decoding="async" src="img/summit-16.svg" alt="Slide: Category-agnostic needs no single team would fund" data-cap="Category-agnostic needs no single team would fund" data-vector="1"></div><figcaption><span class="fn">05</span><span>Category-agnostic needs no single team would fund</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: A spectrum of perspectives in the room"><img loading="lazy" decoding="async" src="img/summit-17.svg" alt="Slide: A spectrum of perspectives in the room" data-cap="A spectrum of perspectives in the room" data-vector="1"></div><figcaption><span class="fn">06</span><span>A spectrum of perspectives in the room</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The larger questions"><img loading="lazy" decoding="async" src="img/summit-18.svg" alt="Slide: The larger questions" data-cap="The larger questions" data-vector="1"></div><figcaption><span class="fn">07</span><span>The larger questions</span></figcaption></figure></div>
+  </div>
+  <p class="aside__title" style="margin-top:48px">The workstream ecosystem</p>
+  <div class="gallery" style="margin-top:12px"><figure class="shot shot--wide"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Generative creativity workstream ecosystem map"><img loading="lazy" decoding="async" src="img/genai-ecosystem.svg" width="1252" height="824" alt="Generative creativity workstream ecosystem map" data-cap="The Generative Creativity workstream ecosystem: thought-leadership workstreams above, core product and research workstreams and their pods below, unassigned areas at right. Colleagues’ names are masked." data-vector="1"></div><figcaption><span class="fn">14</span><span>The Generative Creativity workstream ecosystem: thought-leadership workstreams above, core product and research workstreams and their pods below, unassigned areas at right. Colleagues’ names are masked.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Detail of the core workstreams and their pods"><img loading="lazy" decoding="async" src="img/genai-ecosystem-core.svg" width="1002" height="428" alt="Detail of the core workstreams and their pods" data-cap="Detail: the core workstreams, their pods, and the explorations hanging off each." data-vector="1"></div><figcaption><span class="fn">15</span><span>Detail: the core workstreams, their pods, and the explorations hanging off each.</span></figcaption></figure></div>
+</section><section class="group wrap" id="design-value" aria-labelledby="design-value-title">
+  <header class="group__head">
+    <p class="eyebrow"><span class="num">05</span><span>Project example 5 · Adobe Analytics · 2022</span></p>
+    <h2 id="design-value-title">Articulating the bridge between design efforts and business value</h2>
+    <p class="dek">Design teams get asked to prove they matter and usually can’t, because the numbers the business cares about are three steps removed from anything a designer touches. This map is the steps in between.</p>
+  </header>
+  <article class="entry" id="metrics-map">
+    <div class="entry__text">
+      <h3>Design success metrics map</h3>
+      <p class="entry__meta">Adobe Analytics and Customer Journey Analytics (CJA) · 2022</p>
+      <p class="entry__role">Defined the framework and built the map</p>
+      <p class="body">The Data and Insights design team needed a way to tie its work to outcomes it couldn’t move directly. The map runs left to right, from the leading indicators design can influence through analyst and business-user success to adoption, retention, and ARR; the team adopted it as a 32-metric framework and used it to show where Adobe Analytics was losing ground to newer SMB tools, and which of those losses design could do something about.</p>
+    </div>
+    <div><div class="gallery"><figure class="shot shot--wide"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Design success metrics map from leading to lagging indicators"><img loading="lazy" decoding="async" src="img/metrics-map.svg" width="1472" height="640" alt="Design success metrics map from leading to lagging indicators" data-cap="Leading indicators, the ones design can influence, on the left. Lagging indicators, where the business measures value, on the right." data-vector="1"></div><figcaption><span class="fn">19</span><span>Leading indicators, the ones design can influence, on the left. Lagging indicators, where the business measures value, on the right.</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Detail of the leading indicators: usability, explorability, productivity, and trust"><img loading="lazy" decoding="async" src="img/metrics-map-leading.svg" width="618" height="422" alt="Detail of the leading indicators: usability, explorability, productivity, and trust" data-cap="Detail: the experience indicators under usability, explorability, productivity, and trust." data-vector="1"></div><figcaption><span class="fn">20</span><span>Detail: the experience indicators under usability, explorability, productivity, and trust.</span></figcaption></figure><figure class="shot shot--wide"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: The Miro working board behind the metrics map: homework tables, user success metrics, a relational hierarchy diagram, and synthesis frames"><img loading="lazy" decoding="async" src="img/miro-metrics-board.svg" width="58728" height="38269" alt="The Miro working board behind the metrics map: homework tables, user success metrics, a relational hierarchy diagram, and synthesis frames" data-cap="The working board that led up to the map: homework tables from the team, the user success metrics wall, the relational hierarchy diagram, and the synthesis frames. Vector export from Miro; zoom in to read the stickies." data-vector="1"></div><figcaption><span class="fn">21</span><span>The working board that led up to the map: homework tables from the team, the user success metrics wall, the relational hierarchy diagram, and the synthesis frames. Vector export from Miro; zoom in to read the stickies.</span></figcaption></figure></div></div>
+  </article>
+</section><section class="case wrap" id="express-beta" aria-labelledby="express-beta-title">
+  <header class="case__head">
+    <p class="eyebrow"><span class="num">06</span><span>Project example 6 · Adobe Express · 2023</span></p>
+    <h2 id="express-beta-title">Adobe Express beta research program</h2>
+    <p class="dek">Express was shipping betas every month and there was no shared way to say whether a workflow was ready. I built the program that graded each one, and the roadmap and deck that got leadership to back it. Release cycles went from four weeks to three.</p>
+    <dl class="facts"><div><dt>Organization</dt><dd>Adobe Express, Design Research and Strategy with Design Ops</dd></div><div><dt>My role</dt><dd>Owned the UX Standard of Quality roadmap; designed the grading framework and ran it across the beta program; co-authored the leadership deck with the research manager</dd></div><div><dt>When</dt><dd>2023</dd></div><div><dt>Methods</dt><dd>Roadmapping and DACI, workflow definition, UX benchmarking, qualitative studies, data-science funnels, design review checklists</dd></div><div><dt>Output</dt><dd>UX Standard of Quality roadmap, workflow grading framework (Miro), the X Workflow Assessment deck, ship-readiness guidelines</dd></div></dl>
+  </header>
+  <div class="case__body case__body--single">
+    <div class="prose prose--cols"><div class="prose__blk"><h3>The problem</h3><p>Every team had its own way of saying whether a workflow was good enough to ship, a qual study or a funnel or a design crit, and nothing put those side by side. A ship decision usually turned into an argument.</p></div><div class="prose__blk"><h3>What I did</h3><p>I wrote the roadmap that made UX quality a condition of shipping, then built one framework that every input feeds into, so each key workflow gets a grade you can trace back to whichever input moved it. The deck took both to leadership.</p></div><div class="prose__blk"><h3>What came out</h3><p>Leadership backed it. The framework became the ship-readiness guidelines for the Express beta program, and the release cycle dropped from four weeks to three.</p></div></div>
+  </div>
+  <p class="aside__title" style="margin-top:48px">The roadmap that got the buy-in</p><div class="gallery" style="margin-top:12px"><figure class="shot shot--wide"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: UX Standard of Quality roadmap with three phases, dependencies, and DACI"><img loading="lazy" decoding="async" src="img/roadmap.svg" width="1665" height="1294" alt="UX Standard of Quality roadmap with three phases, dependencies, and DACI" data-cap="The UX Standard of Quality roadmap. Three phases, each with dependencies, support needed, readiness, monthly outcomes for the sponsor, and a DACI. Colleagues’ names are masked." data-vector="1"></div><figcaption><span class="fn">16</span><span>The UX Standard of Quality roadmap. Three phases, each with dependencies, support needed, readiness, monthly outcomes for the sponsor, and a DACI. Colleagues’ names are masked.</span></figcaption></figure><figure class="shot shot--tall"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Detail of Phase 1: pilot the framework for Project X"><img loading="lazy" decoding="async" src="img/roadmap-phase1.svg" width="574" height="751" alt="Detail of Phase 1: pilot the framework for Project X" data-cap="Detail: Phase 1, piloting the framework on one release, with the dependencies that were already secured." data-vector="1"></div><figcaption><span class="fn">17</span><span>Detail: Phase 1, piloting the framework on one release, with the dependencies that were already secured.</span></figcaption></figure></div>
+  <div class="strip">
+    <p class="aside__title">From the X Workflow Assessment deck</p>
+    <div class="slides slides--row n4"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Who collects what: Data Science, research, community, and design, feeding one share-out"><img loading="lazy" decoding="async" src="img/express-03.svg" alt="Slide: Who collects what: Data Science, research, community, and design, feeding one share-out" data-cap="Who collects what: Data Science, research, community, and design, feeding one share-out" data-vector="1"></div><figcaption><span class="fn">01</span><span>Who collects what: Data Science, research, community, and design, feeding one share-out</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The three phases each beta milestone runs through"><img loading="lazy" decoding="async" src="img/express-04.svg" alt="Slide: The three phases each beta milestone runs through" data-cap="The three phases each beta milestone runs through" data-vector="1"></div><figcaption><span class="fn">02</span><span>The three phases each beta milestone runs through</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Benchmarking: testing journeys across key workflows, and what gets measured"><img loading="lazy" decoding="async" src="img/express-08.svg" alt="Slide: Benchmarking: testing journeys across key workflows, and what gets measured" data-cap="Benchmarking: testing journeys across key workflows, and what gets measured" data-vector="1"></div><figcaption><span class="fn">03</span><span>Benchmarking: testing journeys across key workflows, and what gets measured</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: How a benchmark reads against in-market and a competitor (placeholder data)"><img loading="lazy" decoding="async" src="img/express-09.svg" alt="Slide: How a benchmark reads against in-market and a competitor (placeholder data)" data-cap="How a benchmark reads against in-market and a competitor (placeholder data)" data-vector="1"></div><figcaption><span class="fn">04</span><span>How a benchmark reads against in-market and a competitor (placeholder data)</span></figcaption></figure></div>
+  </div>
+  <p class="aside__title" style="margin-top:48px">The grading board, one of twelve</p>
+  <div class="gallery" style="margin-top:12px"><figure class="shot shot--wide"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: Express beta workflow grading framework board for one workflow"><img loading="lazy" decoding="async" src="img/express-grading.svg" width="1317" height="405" alt="Express beta workflow grading framework board for one workflow" data-cap="One workflow’s grading board, left to right: defining success, the workflow and its research notes, benchmarking and study outcomes, the five cross-team inputs, grade. Twelve workflows were graded this way for the milestone; this is one of them." data-vector="1"></div><figcaption><span class="fn">18</span><span>One workflow’s grading board, left to right: defining success, the workflow and its research notes, benchmarking and study outcomes, the five cross-team inputs, grade. Twelve workflows were graded this way for the milestone; this is one of them.</span></figcaption></figure></div>
+</section><section class="group wrap" id="more-work" aria-labelledby="more-work-title">
+  <header class="group__head">
+    <p class="eyebrow"><span class="num">07</span><span>Project example 7 · Adobe · 2019 to 2022</span></p>
+    <h2 id="more-work-title">Other decks and boards</h2>
+    <p class="dek">Three more projects, cut down to the handful of slides that made the case. Colleagues’ names and photos are left out.</p>
+  </header>
+  <article class="entry" id="deck-billing">
+    <div class="entry__text">
+      <h3>Update Billing Requests: a deep dive</h3>
+      <p class="entry__meta">Adobe · Digital Media CX and Product Insights · MBA internship, 2019</p>
+      <p class="entry__role">Owned the whole analysis: use-case coding, cognitive walkthrough, external research, and recommendations</p>
+      <p class="body">In one quarter, 28,322 people contacted support to update their billing information, with the self-serve option right there. I coded 100 transcripts into use cases and walked the flows myself, found the form accepting invalid card details and then showing a success message, and the fixes cut those requests by 31%.</p>
+    </div>
+    <div><div class="slides"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The question: 28,322 contacts"><img loading="lazy" decoding="async" src="img/billing-03.svg" alt="Slide: The question: 28,322 contacts" data-cap="The question: 28,322 contacts" data-vector="1"></div><figcaption><span class="fn">01</span><span>The question: 28,322 contacts</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: How the deep dive is organized"><img loading="lazy" decoding="async" src="img/billing-04.svg" alt="Slide: How the deep dive is organized" data-cap="How the deep dive is organized" data-vector="1"></div><figcaption><span class="fn">02</span><span>How the deep dive is organized</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The most common use cases, from 100 coded transcripts"><img loading="lazy" decoding="async" src="img/billing-06.svg" alt="Slide: The most common use cases, from 100 coded transcripts" data-cap="The most common use cases, from 100 coded transcripts" data-vector="1"></div><figcaption><span class="fn">03</span><span>The most common use cases, from 100 coded transcripts</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Two sub-use cases worth fixing"><img loading="lazy" decoding="async" src="img/billing-07.svg" alt="Slide: Two sub-use cases worth fixing" data-cap="Two sub-use cases worth fixing" data-vector="1"></div><figcaption><span class="fn">04</span><span>Two sub-use cases worth fixing</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: What Adobe.com prevents, and what it doesn’t"><img loading="lazy" decoding="async" src="img/billing-11.svg" alt="Slide: What Adobe.com prevents, and what it doesn’t" data-cap="What Adobe.com prevents, and what it doesn’t" data-vector="1"></div><figcaption><span class="fn">05</span><span>What Adobe.com prevents, and what it doesn’t</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Successful update, unclear messaging"><img loading="lazy" decoding="async" src="img/billing-12.svg" alt="Slide: Successful update, unclear messaging" data-cap="Successful update, unclear messaging" data-vector="1"></div><figcaption><span class="fn">06</span><span>Successful update, unclear messaging</span></figcaption></figure></div></div>
+  </article><article class="entry" id="deck-dx">
+    <div class="entry__text">
+      <h3>DX Users and Customers</h3>
+      <p class="entry__meta">Adobe Experience Cloud · Design Research and Strategy · May 2021</p>
+      <p class="entry__role">Co-authored with three experience researchers; owned the role framework and the journey framing</p>
+      <p class="body">A guide to thinking about Experience Cloud’s audiences as whole organizations rather than the one person with their hands on the keyboard. It separates customers (the company that buys) from users (the people in the product), defines four roles on each side, and calls out the facilitators no team had been treating as its main audience.</p>
+    </div>
+    <div><div class="slides"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Setting the stage"><img loading="lazy" decoding="async" src="img/dx-04.svg" alt="Slide: Setting the stage" data-cap="Setting the stage" data-vector="1"></div><figcaption><span class="fn">01</span><span>Setting the stage</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Four key customer roles"><img loading="lazy" decoding="async" src="img/dx-06.svg" alt="Slide: Four key customer roles" data-cap="Four key customer roles" data-vector="1"></div><figcaption><span class="fn">02</span><span>Four key customer roles</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The customer roles, defined"><img loading="lazy" decoding="async" src="img/dx-07.svg" alt="Slide: The customer roles, defined" data-cap="The customer roles, defined" data-vector="1"></div><figcaption><span class="fn">03</span><span>The customer roles, defined</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Users, put together"><img loading="lazy" decoding="async" src="img/dx-13.svg" alt="Slide: Users, put together" data-cap="Users, put together" data-vector="1"></div><figcaption><span class="fn">04</span><span>Users, put together</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: The work of a facilitator"><img loading="lazy" decoding="async" src="img/dx-16.svg" alt="Slide: The work of a facilitator" data-cap="The work of a facilitator" data-vector="1"></div><figcaption><span class="fn">05</span><span>The work of a facilitator</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Roles no team had been treating as its main audience"><img loading="lazy" decoding="async" src="img/dx-22.svg" alt="Slide: Roles no team had been treating as its main audience" data-cap="Roles no team had been treating as its main audience" data-vector="1"></div><figcaption><span class="fn">06</span><span>Roles no team had been treating as its main audience</span></figcaption></figure></div></div>
+  </article><article class="entry" id="deck-ceatro">
+    <div class="entry__text">
+      <h3>Design POV: a competitive analysis workshop</h3>
+      <p class="entry__meta">Adobe Analytics and Customer Journey Analytics (CJA) · Design Research and Strategy · July 2022</p>
+      <p class="entry__role">Ran the workshop; wrote and designed the deck</p>
+      <p class="body">The Data and Insights design team had a competitive research report on how analysts use Amplitude and Mixpanel, and no shared view of what it meant for Adobe Analytics against the rising SMB analytics platforms. I ran a workshop that turned it into a design point of view, one page per finding with what it changed about our understanding and what we’d do about it, in a format the team kept using.</p>
+    </div>
+    <div><div class="slides"><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Cover"><img loading="lazy" decoding="async" src="img/ceatro-01.svg" alt="Slide: Cover" data-cap="Cover" data-vector="1"></div><figcaption><span class="fn">01</span><span>Cover</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Four workflow differences: request type"><img loading="lazy" decoding="async" src="img/ceatro-05.svg" alt="Slide: Four workflow differences: request type" data-cap="Four workflow differences: request type" data-vector="1"></div><figcaption><span class="fn">02</span><span>Four workflow differences: request type</span></figcaption></figure><figure class="shot"><div class="frame" tabindex="0" role="button" aria-label="Enlarge slide: Four workflow differences: sharing"><img loading="lazy" decoding="async" src="img/ceatro-07.svg" alt="Slide: Four workflow differences: sharing" data-cap="Four workflow differences: sharing" data-vector="1"></div><figcaption><span class="fn">03</span><span>Four workflow differences: sharing</span></figcaption></figure></div><div class="gallery" style="margin-top:28px"><figure class="shot shot--wide"><div class="frame" tabindex="0" role="button" aria-label="Enlarge: The competitor insights workshop board in Miro: welcome, three breakout rooms with their activity frames, and the Design POV deck they fed"><img loading="lazy" decoding="async" src="img/miro-design-pov-board.svg" width="55858" height="47606" alt="The competitor insights workshop board in Miro: welcome, three breakout rooms with their activity frames, and the Design POV deck they fed" data-cap="The workshop board. Three breakout rooms, each working a set of insights through the same prompts, and the Design POV deck they fed into. Vector export from Miro; participants’ names are masked." data-vector="1"></div><figcaption><span class="fn">22</span><span>The workshop board. Three breakout rooms, each working a set of insights through the same prompts, and the Design POV deck they fed into. Vector export from Miro; participants’ names are masked.</span></figcaption></figure></div></div>
+  </article>
+</section><section class="about wrap" id="about" aria-labelledby="about-title">
+  <header class="group__head" style="margin-bottom:0">
+    <p class="eyebrow"><span class="num">08</span><span>About · Salt Lake City, UT · Open to remote</span></p>
+    <h2 id="about-title">About me</h2>
+  </header>
+  <div class="about__grid">
+    <div>
+      <p class="dek" style="font-size:clamp(17px,1.4vw,19px)">I’m a design strategist and mixed-methods researcher. Right now I’m a senior human-centered design consultant at Cast &amp; Hue, a healthcare-focused strategy firm in Salt Lake City, where I run client engagements from kickoff to final deliverable, and where I rebuilt our research practice around AI. Before that I spent three years on Adobe’s internal consulting team, the group that gets handed the problems nobody else has the time or the budget for. I worked daily with the SVP of AI/ML on what became Firefly, defined the success metrics for the Analytics design team, built the Express beta program, and took on the lead PM role when the fastest way to get something shipped was to do it myself. MBA in strategy and an MS in information systems from the University of Utah.</p>
+      <div class="how"><div><h4>Evidence first</h4><p>Every card on one of my maps traces back to a person and a timestamp, and I don’t call something a theme until several people have said it independently.</p></div><div><h4>Where the speed comes from</h4><p>Same-day structured analysis, AI agents that help code the interviews and check the work, and maps generated straight from the data. That’s where the speed comes from, so I don’t have to get it by doing fewer interviews.</p></div><div><h4>Strategy that gets funded</h4><p>Opportunity maps that come with a business case, ranked on desirability, feasibility, and viability, and handed to product teams in a shape they can start building from.</p></div></div>
+      <div class="skills"><div><h4>Research</h4><ul><li>Interviews and ethnography with patients, members, caregivers, frontline staff, and enterprise buyers</li><li>Structured analysis and qualitative coding</li><li>Mixed-methods synthesis</li><li>Verbatim fidelity and provenance</li></ul></div><div><h4>Experience design</h4><ul><li>Journey maps (persona and jobs-to-be-done lenses)</li><li>Process, service, and ecosystem maps</li><li>Opportunity maps and storyboards</li><li>Wireframes and working prototypes</li></ul></div><div><h4>Strategy</h4><ul><li>Framing and problem definition</li><li>Design-strategy workshops</li><li>Prioritization and business cases</li><li>Roadmaps, requirements, acceptance criteria</li><li>Measurement plans: experience, service-level, and business KPIs</li></ul></div><div><h4>Systems and AI</h4><ul><li>Research databases and live dashboards</li><li>Claude-based AI agents for coding and QA</li><li>Code-generated, print-quality artifacts</li><li>Generative AI strategy</li></ul></div></div>
+      <p class="sub">Tools</p>
+      <div class="chips" style="margin-top:0"><span class="chip">Miro</span><span class="chip">Claude</span><span class="chip">HTML and CSS</span><span class="chip">Adobe Analytics</span><span class="chip">SQL</span><span class="chip">Jira</span><span class="chip">Trello</span><span class="chip">Adobe Creative Cloud</span></div>
+      <p class="sub">Education</p>
+      <ul class="list"><li>MBA, Strategy · MS, Information Systems, University of Utah, 2020</li><li>BS, Business Management, Brigham Young University, 2016</li></ul>
+      <p class="sub">Recognition</p>
+      <ul class="list"><li>1st place, national Adobe Analytics Competition ($35,000 grand prize)</li><li>1st place, national Big Data Case Competition, Purdue University</li></ul>
+    </div>
+    <aside class="contact" id="contact">
+      <h3>Let’s talk.</h3>
+      <p>I’m looking for design strategy, UX research, and product roles where the problem is still fuzzy. If you’ve got one of those, I’d like to hear about it.</p>
+      <dl>
+        <div><dt>Email</dt><dd><span class="val" id="email-val">chandler.bush@gmail.com</span><button class="copy" type="button" data-copy="chandler.bush@gmail.com">Copy</button></dd></div>
+        <div><dt>Phone</dt><dd><span class="val">(801) 885-7846</span><button class="copy" type="button" data-copy="(801) 885-7846">Copy</button></dd></div>
+        <div><dt>LinkedIn</dt><dd><a class="val" href="https://www.linkedin.com/in/chandlerbush" target="_blank" rel="noopener">linkedin.com/in/chandlerbush</a></dd></div>
+        <div><dt>Interactive journey map</dt><dd><a class="val" href="journey-map.html" target="_blank" rel="noopener">chandlerbushportfolio · journey map ↗</a></dd></div>
+        <div><dt>PDF version</dt><dd><a class="val" href="chandler-bush-portfolio.pdf" target="_blank" rel="noopener">chandlerbushportfolio · deck ↗</a></dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="foot wrap">
+  <div class="row"><span>Chandler Bush · Design portfolio · 2026</span><span>Salt Lake City, UT · Open to remote</span></div>
+  <p>Client work is shown with identifying details removed. Adobe work is from 2019 to 2023; colleagues’ names are masked and anything beyond what’s on screen stays confidential. The web version and the PDF are built by hand from the same source.</p>
+</footer>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb__bar"><span class="count" id="lb-count"></span><span class="lb__hint" id="lb-hint">Click the image or press + to zoom; drag or scroll to pan</span><span class="lb__zoom"><button type="button" id="lb-zout" aria-label="Zoom out">−</button><span class="zl" id="lb-zl">Fit</span><button type="button" id="lb-zin" aria-label="Zoom in">+</button></span><button type="button" id="lb-prev">Previous</button><button type="button" id="lb-next">Next</button><button type="button" id="lb-close">Close</button></div>
+  <div class="lb__stage"><img id="lb-img" src="" alt=""></div>
+  <p class="lb__cap" id="lb-cap"></p>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div><script>
+(function(){
+  // lightbox over every framed image; prev/next walk the images in the same gallery
+  var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap'),count=document.getElementById('lb-count');
+  var set=[],idx=0,opener=null;
+  function groupOf(frame){var g=frame.closest('.gallery, .slides, .embed');return g?Array.prototype.slice.call(g.querySelectorAll('.frame img')):[frame.querySelector('img')];}
+  var stage=lb.querySelector('.lb__stage'),zl=document.getElementById('lb-zl'),Z=[1,2,3,4],z=1,fitW=0;
+  function zoomTo(nz,px,py){
+    if(z===1&&nz>1){fitW=img.getBoundingClientRect().width;}
+    z=nz;px=px==null?.5:px;py=py==null?.5:py;
+    if(z<=1){lb.classList.remove('is-zoomed');img.style.width='';}else{lb.classList.add('is-zoomed');img.style.width=Math.round(fitW*z)+'px';}
+    lb.classList.toggle('is-max',z>=Z[Z.length-1]);zl.textContent=z<=1?'Fit':z+'×';
+    requestAnimationFrame(function(){stage.scrollLeft=px*img.offsetWidth-stage.clientWidth/2;stage.scrollTop=py*img.offsetHeight-stage.clientHeight/2;});
+  }
+  function show(i){idx=(i+set.length)%set.length;var el=set[idx];img.src=el.currentSrc||el.src;img.alt=el.alt;cap.textContent=el.getAttribute('data-cap')||el.alt;count.textContent=(idx+1)+' / '+set.length;z=1;lb.classList.remove('is-zoomed','is-max');img.style.width='';zl.textContent='Fit';}
+  function open(frame){set=groupOf(frame);var el=frame.querySelector('img');opener=frame;show(Math.max(0,set.indexOf(el)));lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lb-close').focus();}
+  function close(){lb.hidden=true;document.body.style.overflow='';img.src='';if(opener&&opener.focus)opener.focus();}
+  document.addEventListener('click',function(e){var f=e.target.closest('.frame');if(f){open(f);}});
+  document.addEventListener('keydown',function(e){var f=e.target.closest&&e.target.closest('.frame');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open(f);return;}
+    if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')show(idx+1);if(e.key==='ArrowLeft')show(idx-1);
+    if(e.key==='+'||e.key==='='){var i=Z.indexOf(z);if(i<Z.length-1)zoomTo(Z[i+1]);}if(e.key==='-'||e.key==='_'){var j=Z.indexOf(z);if(j>0)zoomTo(Z[j-1]);}if(e.key==='0')zoomTo(1);});
+  document.getElementById('lb-close').addEventListener('click',close);
+  document.getElementById('lb-prev').addEventListener('click',function(){show(idx-1)});
+  document.getElementById('lb-next').addEventListener('click',function(){show(idx+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb__stage'))close();});
+  img.addEventListener('click',function(e){var r=img.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;var i=Z.indexOf(z);zoomTo(i>=Z.length-1?1:Z[i+1],px,py);});
+  document.getElementById('lb-zin').addEventListener('click',function(){var i=Z.indexOf(z);if(i<Z.length-1)zoomTo(Z[i+1]);});
+  document.getElementById('lb-zout').addEventListener('click',function(){var i=Z.indexOf(z);if(i>0)zoomTo(Z[i-1]);});
+  // drag to pan while zoomed
+  var drag=null;stage.addEventListener('pointerdown',function(e){if(!lb.classList.contains('is-zoomed'))return;drag={x:e.clientX,y:e.clientY,l:stage.scrollLeft,t:stage.scrollTop,moved:false};});
+  stage.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;stage.scrollLeft=drag.l-dx;stage.scrollTop=drag.t-dy;});
+  stage.addEventListener('pointerup',function(){if(drag&&drag.moved){var block=function(e){e.stopPropagation();e.preventDefault();img.removeEventListener('click',block,true);};img.addEventListener('click',block,true);}drag=null;});
+  stage.addEventListener('pointercancel',function(){drag=null;});
+
+  // interactive map: swap the screenshot for the live page on request
+  var load=document.getElementById('map-load');
+  var embed=document.getElementById('live-map'),expand=document.getElementById('map-expand');
+  if(load){load.addEventListener('click',function(){var stage=document.getElementById('map-stage');var fr=document.createElement('iframe');fr.src="journey-map.html";fr.title='Athlete Journey Map, interactive';fr.loading='eager';stage.innerHTML='';stage.appendChild(fr);expand.hidden=false;fr.focus();});}
+  function setFull(on){embed.classList.toggle('is-full',on);document.body.style.overflow=on?'hidden':'';expand.querySelector('span').textContent=on?'Exit full screen':'Full screen';}
+  if(expand){expand.addEventListener('click',function(){setFull(!embed.classList.contains('is-full'));});}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&embed&&embed.classList.contains('is-full'))setFull(false);});
+
+  // copy buttons
+  var toast=document.getElementById('toast'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('is-on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('is-on')},1800);}
+  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-copy');
+    function fallback(){var s=b.previousElementSibling;if(s){var r=document.createRange();r.selectNodeContents(s);var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);}say('Selected. Press copy.');}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(function(){say('Copied')},fallback);}else{fallback();}});});
+
+  // active section in the top nav
+  var links=document.querySelectorAll('.top__nav a');var secs=Array.prototype.map.call(links,function(a){return document.getElementById(a.getAttribute('data-nav'))}).filter(Boolean);
+  if('IntersectionObserver' in window){var cur=null;var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){cur=en.target.id;links.forEach(function(a){a.classList.toggle('is-active',a.getAttribute('data-nav')===cur)});}});},{rootMargin:'-20% 0px -70% 0px'});secs.forEach(function(s){io.observe(s)});}
+})();
+</script></body></html>
